@@ -24,6 +24,7 @@ int main(){
         }
         cin>>EMPLEADOS[i].sal;
     }
+
     float ventas_max = -1;
     int indice_max= -1;
 
@@ -32,6 +33,11 @@ int main(){
         for (int j=0; j<12; j++){
             total = total + EMPLEADOS[i].ven[j];
         }
+        
+        if(total > 100){
+            EMPLEADOS[i].sal = EMPLEADOS[i].sal +(EMPLEADOS[i].sal * 0.1);
+        }
+
         if (total > ventas_max){
             ventas_max = total;
             indice_max = i;
@@ -42,7 +48,7 @@ int main(){
         cout<<"Empleado con mayores ventas: "<<endl;
         cout<<"Numero: "<<EMPLEADOS[indice_max].num<<endl;
         cout<<"Nombre: "<<EMPLEADOS[indice_max].nom<<endl;
-        cout<<"Ventas totales: "<<EMPLEADOS[indice_max].ven<<endl;
+        cout<<"Ventas totales: "<<ventas_max<<endl;
     }
     else{
         cout<<"No hay empleados registrados"<<endl;
