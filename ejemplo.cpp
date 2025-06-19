@@ -25,6 +25,20 @@ int main(){
         cin>>EMPLEADOS[i].sal;
     }
 
+    cout << "\nEmpleados con ventas inferiores a 30 en diciembre:" << endl;
+    bool encontrados = false;
+    for (int i = 0; i < n; i++) {
+        if (EMPLEADOS[i].ven[11] < 30){
+            cout << "Numero: "<<EMPLEADOS[i].num<<endl;
+            cout << "Nombre: "<<EMPLEADOS[i].nom<<endl;
+            cout << "Ventas diciembre: "<< EMPLEADOS[i].ven[11] << "\n" << endl;
+            encontrados = true;
+        }
+    }
+    if (encontrados == false){
+        cout<<"Ningun empleado tuvo ventas inferiores a 30 en diciembre"<<endl;
+    }
+
     float ventas_max = -1;
     int indice_max= -1;
 
